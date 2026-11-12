@@ -1,0 +1,49 @@
+
+{% extends "base.html" %}
+
+{% block title %}Accedi | ReUse{% endblock %}
+
+{% block content %}
+
+<div class="auth-container">
+
+    <div class="auth-heading">
+        <span class="tag">BENTORNATO</span>
+        <h1>Accedi al tuo account.</h1>
+        <p>Inserisci le tue credenziali per continuare.</p>
+    </div>
+
+    <form method="POST" class="auth-card">
+
+        <label for="email">Email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="nome@email.com"
+            required
+        >
+
+        <label for="password">Password</label>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="La tua password"
+            required
+        >
+
+        <button type="submit" class="btn primary full">
+            Accedi
+        </button>
+
+        <p class="auth-footer">
+            Non hai un account?
+            <a href="/register">Registrati</a>
+        </p>
+
+    </form>
+
+</div>
+
+{% endblock %}

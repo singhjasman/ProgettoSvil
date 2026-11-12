@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}ReUse{% endblock %}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <a href="/" class="logo">re<span>use.</span></a>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            {% if session.get("user_id") %}
+
+                <a href="/dashboard">Il mio account</a>
+                <a href="/logout" class="nav-button">Esci</a>
+
+            {% else %}
+
+                <a href="/login">Accedi</a>
+                <a href="/register" class="nav-button">Registrati</a>
+
+            {% endif %}
+
+        </div>
+
+    </nav>
+
+    <main class="container">
+
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                <div class="message">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+    <footer>
+        <p>© 2026 ReUse - Dai una seconda vita agli oggetti.</p>
+    </footer>
+
+</body>
+</html>

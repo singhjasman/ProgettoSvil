@@ -1,0 +1,60 @@
+
+{% extends "base.html" %}
+
+{% block title %}Registrati | ReUse{% endblock %}
+
+{% block content %}
+
+<div class="auth-container">
+
+    <div class="auth-heading">
+        <span class="tag">UNISCITI A REUSE</span>
+        <h1>Crea il tuo account.</h1>
+        <p>Registrati per iniziare a comprare e vendere.</p>
+    </div>
+
+    <form method="POST" class="auth-card">
+
+        <label for="username">Nome utente</label>
+        <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Il tuo nome"
+            maxlength="50"
+            required
+        >
+
+        <label for="email">Email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="nome@email.com"
+            required
+        >
+
+        <label for="password">Password</label>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Almeno 8 caratteri"
+            minlength="8"
+            required
+        >
+
+        <button type="submit" class="btn primary full">
+            Crea account
+        </button>
+
+        <p class="auth-footer">
+            Hai già un account?
+            <a href="/login">Accedi</a>
+        </p>
+
+    </form>
+
+</div>
+
+{% endblock %}

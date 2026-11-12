@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+
+{% block title %}Il mio account | ReUse{% endblock %}
+
+{% block content %}
+
+<section class="dashboard">
+
+    <span class="tag">AREA PERSONALE</span>
+
+    <h1>Ciao, {{ user.username }}!</h1>
+
+    <p>Benvenuto nella tua area personale di ReUse.</p>
+
+    <div class="account-card">
+
+        <div class="avatar">
+            {{ user.username[0]|upper }}
+        </div>
+
+        <div>
+            <h2>{{ user.username }}</h2>
+            <p>{{ user.email }}</p>
+            <span class="role">{{ user.role }}</span>
+        </div>
+
+    </div>
+
+    <div class="dashboard-placeholder">
+        <h3>La tua attività</h3>
+        <p>
+            Qui potrai gestire i tuoi annunci, consultare gli acquisti
+            e controllare il tuo carrello.
+        </p>
+        <span>Funzionalità in arrivo</span>
+    </div>
+
+    <a href="/logout" class="btn secondary">Esci dall'account</a>
+
+</section>
+
+{% endblock %}

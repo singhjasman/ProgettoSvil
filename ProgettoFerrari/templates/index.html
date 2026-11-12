@@ -1,0 +1,90 @@
+
+{% extends "base.html" %}
+
+{% block title %}ReUse | Marketplace dell'usato{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <span class="tag">COMPRA E VENDI ONLINE</span>
+
+        <h1>Gli oggetti meritano una <span>seconda vita.</span></h1>
+
+        <p>
+            Scopri occasioni, vendi ciò che non utilizzi più
+            e dai nuova vita agli oggetti usati.
+        </p>
+
+        <div class="hero-buttons">
+
+            {% if session.get("user_id") %}
+                <a href="/dashboard" class="btn primary">Il mio account</a>
+            {% else %}
+                <a href="/register" class="btn primary">Inizia subito</a>
+                <a href="/login" class="btn secondary">Accedi</a>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <div class="hero-visual">
+        <div class="visual-icon">♻</div>
+        <h2>Compra meglio.</h2>
+        <h2>Vendi facilmente.</h2>
+        <p>Il marketplace dedicato all'usato.</p>
+    </div>
+
+</section>
+
+<section class="categories">
+
+    <div class="section-heading">
+        <div>
+            <span class="tag">ESPLORA</span>
+            <h2>Le categorie</h2>
+        </div>
+        <p>Trova quello che stai cercando.</p>
+    </div>
+
+    <div class="category-grid">
+
+        <div class="category-card">
+            <span>📱</span>
+            <h3>Elettronica</h3>
+        </div>
+
+        <div class="category-card">
+            <span>👕</span>
+            <h3>Abbigliamento</h3>
+        </div>
+
+        <div class="category-card">
+            <span>🛋️</span>
+            <h3>Casa e arredamento</h3>
+        </div>
+
+        <div class="category-card">
+            <span>⚽</span>
+            <h3>Sport e hobby</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="sell-banner">
+
+    <div>
+        <h2>Hai qualcosa che non utilizzi più?</h2>
+        <p>Registrati e preparati a pubblicare il tuo primo annuncio.</p>
+    </div>
+
+    <a href="/register" class="btn white">Inizia a vendere</a>
+
+</section>
+
+{% endblock %}
